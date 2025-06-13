@@ -1,0 +1,9 @@
+research_task:
+  description: |
+    Conduct a thorough research and understand the information given to you in knowledge source.
+    The information given to you is about a person with their records, achievements, work and etc.
+  expected_output: |
+    Answer with the most relevant information and present it in a clear and concise manner for the questions: {question}
+  agent: researcher
+
+

@@ -1,0 +1,24 @@
+[project]
+name = "bujji"
+version = "0.1.0"
+description = "Bujji using crewAI"
+authors = [{ name = "Shiva sai", email = "shivasaisherla9@gmail.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.121.1,<1.0.0",
+    "docling>=2.36.1",
+]
+
+[project.scripts]
+bujji = "bujji.main:run"
+run_crew = "bujji.main:run"
+train = "bujji.main:train"
+replay = "bujji.main:replay"
+test = "bujji.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
