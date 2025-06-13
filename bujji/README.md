@@ -1,54 +1,133 @@
-# Bujji Crew
+# Bujji
 
-Welcome to the Bujji Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Bujji is an AI-powered project built using CrewAI framework, designed to create and manage intelligent agent crews for various tasks.
+
+## Overview
+
+Bujji is a Python-based project that leverages the CrewAI framework to create and orchestrate AI agents. The project is structured to provide a flexible and extensible platform for building AI-powered solutions.
+
+## Features
+
+- Built on CrewAI framework
+- Modular architecture with separate tools and configuration
+- Command-line interface for easy interaction
+- Support for training and testing agents
+- Replay functionality for reviewing agent interactions
+
+## Functionality
+
+Bujji is designed as an intelligent portfolio description agent with the following key capabilities:
+
+### Core Features
+
+1. **Portfolio Analysis**
+   - Analyzes and processes portfolio information from multiple sources
+   - Extracts relevant information from PDF documents
+   - Integrates data from web sources (LinkedIn, GitHub)
+
+2. **Intelligent Response Generation**
+   - Uses the Mistral 7B model for natural language processing
+   - Generates personalized and professional descriptions
+   - Provides concise and relevant information based on user queries
+
+3. **Knowledge Integration**
+   - Processes multiple knowledge sources:
+     - PDF documents (resumes, research papers)
+     - Web content (professional profiles)
+     - Custom knowledge bases
+
+4. **Interactive Capabilities**
+   - Responds to user queries about portfolio information
+   - Provides detailed insights based on available data
+   - Maintains context-aware conversations
+
+### Technical Capabilities
+
+1. **Agent System**
+   - Sequential processing of tasks
+   - Customizable agent roles and goals
+   - Integration with Ollama for local LLM processing
+
+2. **Training and Testing**
+   - Supports iterative training with customizable parameters
+   - Provides testing capabilities for agent performance
+   - Includes replay functionality for reviewing agent interactions
+
+3. **Knowledge Management**
+   - PDF document processing
+   - Web content integration
+   - Custom knowledge base support
+
+## Requirements
+
+- Python 3.10 or higher (but less than 3.13)
+- Dependencies:
+  - crewai[tools] >= 0.121.1
+  - docling >= 2.36.1
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
-
-First, if you haven't already, install uv:
-
+1. Clone the repository:
 ```bash
-pip install uv
+git clone <repository-url>
+cd bujji
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+2. Create and activate a virtual environment:
 ```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/bujji/config/agents.yaml` to define your agents
-- Modify `src/bujji/config/tasks.yaml` to define your tasks
-- Modify `src/bujji/crew.py` to add your own logic, tools and specific args
-- Modify `src/bujji/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
-This command initializes the Bujji Crew, assembling the agents and assigning them tasks as defined in your configuration.
+3. Install dependencies:
+```bash
+pip install -e .
+```
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## Usage
 
-## Understanding Your Crew
+The project provides several command-line interfaces:
 
-The Bujji Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+- `bujji`: Main entry point
+- `run_crew`: Run the AI crew
+- `train`: Train the agents
+- `replay`: Review agent interactions
+- `test`: Run tests
 
-## Support
+Example usage:
+```bash
+bujji run_crew
+```
 
-For support, questions, or feedback regarding the Bujji Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+## Project Structure
 
-Let's create wonders together with the power and simplicity of crewAI.
+```
+bujji/
+├── src/
+│   └── bujji/
+│       ├── config/     # Configuration files
+│       ├── tools/      # Custom tools and utilities
+│       ├── crew.py     # Crew implementation
+│       └── main.py     # Main entry point
+├── tests/             # Test files
+├── knowledge/         # Knowledge base
+└── Agent_data/       # Agent-related data
+```
+
+## Development
+
+To contribute to the project:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+[Add your license information here]
+
+## Contact
+
+- Author: Shiva sai
+- Email: shivasaisherla9@gmail.com
